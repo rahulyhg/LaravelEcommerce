@@ -29,3 +29,7 @@ Route::get('/category/{category}/edit', '\App\Modules\Category\Controllers\Categ
 //payment method route
 Route::get('/payment_method', '\App\Modules\PaymentMethod\Controllers\PaymentMethodController@index')->name('payment_method.index')->middleware('auth');
 Route::get('/payment_method/create', '\App\Modules\PaymentMethod\Controllers\PaymentMethodController@create')->name('payment_method.create')->middleware('auth');
+//order route
+Route::get('/order', '\App\Modules\Order\Controllers\OrderController@index')->name('order.index')->middleware('auth');
+//user route
+Route::get('/user', '\App\Modules\User\Controllers\UserController@index')->name('user.index')->middleware('auth');

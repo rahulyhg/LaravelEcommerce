@@ -58,4 +58,6 @@
 </div>
 @endsection
 @section('scripts')
+ <script src="{{ asset('public/js/discount_calculate.js') }}" defer></script>
+
 @endsection
