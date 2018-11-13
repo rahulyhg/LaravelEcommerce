@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('theme.default')
 @section('title', 'Admin')
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
 			@endif
 			<h2>Add New product</small></h2>
 			<hr class="colorgraph">
-			<form action="{{ route('product.store') }}" id="productform" role="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+			<form action="" id="productform" role="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 				@csrf
 				<!-- Name Field -->
 				<div class="form-group">
@@ -35,7 +35,7 @@
 				</div>
 				<!-- Mobile Number Field -->
 				<div class="form-group">
-					<input type="text" name="product_selling_price" value="" id="product_selling_price" class="form-control input-lg" maxlength="100" placeholder="product selling price" tabindex="3"  />
+					<input type="text" name="product_selling_price" value="" id="product_selling_price" class="form-control input-lg" maxlength="100" placeholder="product selling price" tabindex="3" disabled="" readonly="" />
 				</div>
 				<div class="form-group">
 					<label for="category_name" class="sr-only">Category Name</label>

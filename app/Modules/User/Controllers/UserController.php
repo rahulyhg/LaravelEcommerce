@@ -4,7 +4,6 @@ namespace App\Modules\User\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use HTML;
 
 class UserController extends Controller
 {
@@ -26,8 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
-        return view('User::create');
+        //
     }
 
     /**

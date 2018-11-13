@@ -18,9 +18,8 @@
 			@endif
 
 			@foreach ($products as $key)
-			<form action="{{ route('product.store') }}" cl id="productform" role="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-				@csrf
-				<!-- Name Field -->
+			<form action="" cl id="productform" role="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+@csrf				<!-- Name Field -->
 				<div class="form-group">
 					<input type="text" name="product_name"  id="product_name" class="form-control input-lg" maxlength="100" placeholder="Product Name" tabindex="3"  value="{{$key->product_name}}"/>
 				</div>
@@ -38,7 +37,7 @@
 				</div>
 				<!-- Mobile Number Field -->
 				<div class="form-group">
-					<input type="text" name="product_selling_price" value="{{$key->product_selling_price}}" id="product_selling_price" class="form-control input-lg" maxlength="100" placeholder="product selling price" tabindex="3"  />
+					<input type="text" name="product_selling_price" value="{{$key->product_selling_price}}" id="product_selling_price" class="form-control input-lg" maxlength="100" placeholder="product selling price" tabindex="3"  disabled="" readonly="" />
 				</div>
 				@endforeach
 				<div class="form-group">
@@ -60,4 +59,8 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('scripts')
+ <script src="{{ asset('public/js/discount_calculate.js') }}" defer></script>
+
 @endsection

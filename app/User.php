@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
+use Config;
+
 use App\Notifications\ResetPassword as ResetPasswordNotification;
 
 class User extends Authenticatable
@@ -27,23 +30,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    /**
-     * [sendPasswordResetNotification description]
-     * @param  [type] $token [description]
-     * @return [type]        [description]
-     */
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
-    }
-
-    /**
-     * [verifyUser description]
-     * @return [type] [description]
-     */
-    public function verifyUser()
-    {
-        return $this->hasOne('App\VerifyUser');
     }
 }

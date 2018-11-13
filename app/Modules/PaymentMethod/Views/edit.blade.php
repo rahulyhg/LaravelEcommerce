@@ -5,7 +5,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			@if ($errors->any())
+			@if(isset($errors))
+			@if($errors->any())
 			<div class="alert alert-danger">
 				<ul>
 					@foreach ($errors->all() as $error)
@@ -14,6 +15,8 @@
 				</ul>
 			</div>
 			@endif
+	@endif
+
 			@foreach ($payment_methods as $key)
 			<form action="{{ route('payment_method.update',$key->payment_method_id) }}" cl id="productform" role="form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 				<input name="_method" type="hidden" value="PATCH">				<!-- Name Field -->
